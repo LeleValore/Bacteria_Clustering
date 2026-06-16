@@ -1,0 +1,121 @@
+2026-06-15 22:02:28,047 | INFO | ============================================================
+2026-06-15 22:02:28,047 | INFO |   FibroGraph – Microbial Abundance Pipeline
+2026-06-15 22:02:28,047 | INFO | ============================================================
+2026-06-15 22:02:28,047 | INFO | [STEP 1] Lettura file: /Users/emanuelevalore/Desktop/Progetto  Bioinformatica/data/genere_table_spectrum.txt
+2026-06-15 22:02:28,116 | INFO |   Matrice caricata: 1295 batteri × 1344 campioni
+2026-06-15 22:02:28,130 | INFO |   Preprocessing completato in 0.08s | sparsità: 93.2%
+2026-06-15 22:02:28,131 | INFO | [STEP 2] SVD troncata con k=300 valori singolari ...
+2026-06-15 22:02:29,476 | INFO |   Top-10 singular values: [1994.82  752.28  528.63  386.03  366.65  345.59  292.6   281.5   272.26
+  262.68]
+2026-06-15 22:02:29,477 | INFO |   U:(1295, 300)  Σ:(300,)  Vᵀ:(300, 1344)
+2026-06-15 22:02:29,482 | INFO |   Embedding campioni: (300, 1344) | completato in 1.35s
+2026-06-15 22:02:29,487 | INFO | [IO] SVD embedding salvato: /Users/emanuelevalore/Desktop/Progetto  Bioinformatica/results/svd_embedding.npy
+2026-06-15 22:02:29,487 | INFO | [IO] Valori singolari salvati: /Users/emanuelevalore/Desktop/Progetto  Bioinformatica/results/singular_values.npy
+2026-06-15 22:02:29,487 | INFO | [STEP 3] Costruzione grafo KNN (K=15, metric=cosine) ...
+2026-06-15 22:02:35,741 | INFO |   NNDescent completato in 6.25s
+2026-06-15 22:02:35,756 | INFO |   Grafo costruito: 1344 nodi | 13527 archi | 6.27s
+2026-06-15 22:02:35,832 | INFO | [IO] Grafo salvato (GraphML): /Users/emanuelevalore/Desktop/Progetto  Bioinformatica/results/knn_graph.graphml
+2026-06-15 22:02:35,832 | INFO | [STEP 4] Clustering Louvain ...
+2026-06-15 22:18:40,905 | INFO | ============================================================
+2026-06-15 22:18:40,906 | INFO |   FibroGraph – Microbial Abundance Pipeline
+2026-06-15 22:18:40,906 | INFO | ============================================================
+2026-06-15 22:18:40,906 | INFO | [STEP 1] Lettura file: /Users/emanuelevalore/Desktop/Progetto  Bioinformatica/data/genere_table_spectrum.txt
+2026-06-15 22:18:40,960 | INFO |   Matrice caricata: 1295 batteri × 1344 campioni
+2026-06-15 22:18:40,972 | INFO |   Preprocessing completato in 0.07s | sparsità: 93.2%
+2026-06-15 22:18:40,973 | INFO | [STEP 2] SVD troncata con k=300 valori singolari ...
+2026-06-15 22:18:42,355 | INFO |   Top-10 singular values: [1994.82  752.28  528.63  386.03  366.65  345.59  292.6   281.5   272.26
+  262.68]
+2026-06-15 22:18:42,356 | INFO |   U:(1295, 300)  Σ:(300,)  Vᵀ:(300, 1344)
+2026-06-15 22:18:42,358 | INFO |   Embedding campioni: (300, 1344) | completato in 1.39s
+2026-06-15 22:18:42,361 | INFO | [IO] SVD embedding salvato: /Users/emanuelevalore/Desktop/Progetto  Bioinformatica/results/svd_embedding.npy
+2026-06-15 22:18:42,361 | INFO | [IO] Valori singolari salvati: /Users/emanuelevalore/Desktop/Progetto  Bioinformatica/results/singular_values.npy
+2026-06-15 22:18:42,361 | INFO | [STEP 3] Costruzione grafo KNN (K=15, metric=cosine) ...
+2026-06-15 22:18:48,253 | INFO |   NNDescent completato in 5.89s
+2026-06-15 22:18:48,267 | INFO |   Grafo costruito: 1344 nodi | 13449 archi | 5.91s
+2026-06-15 22:18:48,336 | INFO | [IO] Grafo salvato (GraphML): /Users/emanuelevalore/Desktop/Progetto  Bioinformatica/results/knn_graph.graphml
+2026-06-15 22:18:48,336 | INFO | [STEP 4] Clustering Louvain ...
+2026-06-15 23:00:11,211 | INFO | ============================================================
+2026-06-15 23:00:11,212 | INFO |   FibroGraph – Microbial Abundance Pipeline
+2026-06-15 23:00:11,212 | INFO | ============================================================
+2026-06-15 23:00:11,212 | INFO | [STEP 1] Lettura file: /Users/emanuelevalore/Desktop/Progetto  Bioinformatica/data/genere_table_spectrum.txt
+2026-06-15 23:00:11,268 | INFO |   Matrice caricata: 1295 batteri × 1344 campioni
+2026-06-15 23:00:11,279 | INFO |   Preprocessing completato in 0.07s | sparsità: 93.2%
+2026-06-15 23:00:11,279 | INFO | [STEP 2] SVD troncata con k=300 valori singolari ...
+2026-06-15 23:00:12,970 | INFO |   Top-10 singular values: [1994.82  752.28  528.63  386.03  366.65  345.59  292.6   281.5   272.26
+  262.68]
+2026-06-15 23:00:12,971 | INFO |   U:(1295, 300)  Σ:(300,)  Vᵀ:(300, 1344)
+2026-06-15 23:00:13,008 | INFO |   Embedding campioni: (300, 1344) | completato in 1.73s
+2026-06-15 23:00:13,012 | INFO | [IO] SVD embedding salvato: /Users/emanuelevalore/Desktop/Progetto  Bioinformatica/results/svd_embedding.npy
+2026-06-15 23:00:13,012 | INFO | [IO] Valori singolari salvati: /Users/emanuelevalore/Desktop/Progetto  Bioinformatica/results/singular_values.npy
+2026-06-15 23:00:13,012 | INFO | [STEP 3] Costruzione grafo KNN (K=15, metric=cosine) ...
+2026-06-15 23:00:19,101 | INFO |   NNDescent completato in 6.09s
+2026-06-15 23:00:19,127 | INFO |   Grafo costruito: 1344 nodi | 13453 archi | 6.12s
+2026-06-15 23:00:19,217 | INFO | [IO] Grafo salvato (GraphML): /Users/emanuelevalore/Desktop/Progetto  Bioinformatica/results/knn_graph.graphml
+2026-06-15 23:00:19,217 | INFO | [STEP 4] Clustering Louvain ...
+2026-06-15 23:00:19,217 | INFO |   [DEBUG] Tipo dei nodi: <class 'int'>
+2026-06-15 23:00:19,218 | INFO |   [DEBUG] Numero di nodi: 1344, Archi: 13453
+2026-06-15 23:00:19,221 | INFO |   [DEBUG] Pesi degli archi -> Min: 0.0, Max: inf, NaN: False
+2026-06-15 23:01:34,732 | INFO | ============================================================
+2026-06-15 23:01:34,732 | INFO |   FibroGraph – Microbial Abundance Pipeline
+2026-06-15 23:01:34,732 | INFO | ============================================================
+2026-06-15 23:01:34,732 | INFO | [STEP 1] Lettura file: /Users/emanuelevalore/Desktop/Progetto  Bioinformatica/data/genere_table_spectrum.txt
+2026-06-15 23:01:34,793 | INFO |   Matrice caricata: 1295 batteri × 1344 campioni
+2026-06-15 23:01:34,806 | INFO |   Preprocessing completato in 0.07s | sparsità: 93.2%
+2026-06-15 23:01:34,808 | INFO | [STEP 2] SVD troncata con k=300 valori singolari ...
+2026-06-15 23:01:37,043 | INFO |   Top-10 singular values: [1994.82  752.28  528.63  386.03  366.65  345.59  292.6   281.5   272.26
+  262.68]
+2026-06-15 23:01:37,043 | INFO |   U:(1295, 300)  Σ:(300,)  Vᵀ:(300, 1344)
+2026-06-15 23:01:37,056 | INFO |   Embedding campioni: (300, 1344) | completato in 2.25s
+2026-06-15 23:01:37,058 | INFO | [IO] SVD embedding salvato: /Users/emanuelevalore/Desktop/Progetto  Bioinformatica/results/svd_embedding.npy
+2026-06-15 23:01:37,058 | INFO | [IO] Valori singolari salvati: /Users/emanuelevalore/Desktop/Progetto  Bioinformatica/results/singular_values.npy
+2026-06-15 23:01:37,058 | INFO | [STEP 3] Costruzione grafo KNN (K=15, metric=cosine) ...
+2026-06-15 23:01:43,070 | INFO |   NNDescent completato in 6.01s
+2026-06-15 23:01:43,084 | INFO |   Grafo costruito: 1344 nodi | 13500 archi | 6.03s
+2026-06-15 23:01:43,160 | INFO | [IO] Grafo salvato (GraphML): /Users/emanuelevalore/Desktop/Progetto  Bioinformatica/results/knn_graph.graphml
+2026-06-15 23:01:43,160 | INFO | [STEP 4] Clustering Louvain ...
+2026-06-15 23:01:43,174 | WARNING |   [BONIFICA] Trovati 339 archi con peso infinito (inf)! Sostituiti con il valore finito stabile: 2.0000
+2026-06-15 23:01:43,254 | INFO |   Louvain completato in 0.08s | cluster trovati: 20
+2026-06-15 23:01:43,254 | INFO |   Distribuzione cluster:
+0      40
+1     187
+2      91
+3      42
+4      36
+5      96
+6      85
+7      64
+8      21
+9     121
+10     56
+11     48
+12     16
+13    113
+14     80
+15     40
+16     80
+17     44
+18     44
+19     40
+2026-06-15 23:01:43,262 | INFO | [IO] Cluster assignments salvati: /Users/emanuelevalore/Desktop/Progetto  Bioinformatica/results/sample_clusters.csv
+2026-06-15 23:01:43,262 | INFO | [VIZ] Grafo KNN + cluster (spring layout) ...
+2026-06-15 23:01:43,263 | INFO |   Calcolo spring layout ...
+2026-06-15 23:01:50,866 | INFO |   Salvato: /Users/emanuelevalore/Desktop/Progetto  Bioinformatica/img/knn_louvain_graph.png
+2026-06-15 23:01:50,868 | INFO | [VIZ] Cluster summary barplot ...
+2026-06-15 23:01:51,053 | INFO |   Salvato: /Users/emanuelevalore/Desktop/Progetto  Bioinformatica/img/cluster_summary.png
+2026-06-15 23:01:51,053 | INFO | [VIZ] SVD scree plot ...
+2026-06-15 23:01:51,254 | INFO |   Salvato: /Users/emanuelevalore/Desktop/Progetto  Bioinformatica/img/svd_scree_plot.png
+2026-06-15 23:01:51,254 | INFO | [VIZ] Heatmap phylum × cluster ...
+2026-06-15 23:01:51,579 | INFO |   Salvato: /Users/emanuelevalore/Desktop/Progetto  Bioinformatica/img/phylum_cluster_heatmap.png
+2026-06-15 23:02:02,119 | INFO | [VIZ] Proiezione UMAP 2D ...
+2026-06-15 23:02:07,003 | INFO |   Salvato: /Users/emanuelevalore/Desktop/Progetto  Bioinformatica/img/umap_clusters.png
+2026-06-15 23:02:07,003 | INFO | 
+============================================================
+2026-06-15 23:02:07,003 | INFO |   SUMMARY FINALE
+2026-06-15 23:02:07,003 | INFO | ============================================================
+2026-06-15 23:02:07,003 | INFO |   Campioni      : 1344
+2026-06-15 23:02:07,004 | INFO |   Batteri       : 1295
+2026-06-15 23:02:07,004 | INFO |   SVD k         : 300
+2026-06-15 23:02:07,004 | INFO |   KNN K         : 15
+2026-06-15 23:02:07,004 | INFO |   Cluster       : 20
+2026-06-15 23:02:07,004 | INFO |   Tempo totale  : 32.3s
+2026-06-15 23:02:07,004 | INFO | ============================================================

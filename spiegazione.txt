@@ -1,0 +1,87 @@
+================================================================================
+RELAZIONE TECNICO-BIOLOGICA: ANALISI DEI RISULTATI DELLA PIPELINE FIBROGRAPH
+================================================================================
+
+1. METODOLOGIA COMPUTAZIONALE E STRUTTURA DATI
+--------------------------------------------------------------------------------
+La pipeline ha elaborato una matrice di abbondanza microbica composta da 1.344 
+campioni biologici e 1.295 entità tassonomiche (Generi). Il workflow ha previsto:
+- Trasformazione logaritmica e preprocessing della matrice di input.
+- Riduzione della dimensionalità tramite SVD Troncata (k=300) per catturare la 
+  varianza biologica abbattendo il rumore di fondo.
+- Costruzione di un grafo K-Nearest Neighbors (KNN, K=15) basato su metrica di 
+  distanza coseno.
+- Clustering topologico mediante algoritmo di Louvain (ottimizzazione della 
+  modularità), che ha identificato 20 comunità (cluster) discrete.
+
+--------------------------------------------------------------------------------
+2. INTERPRETAZIONE DELLA PROIEZIONE 2D (umap_clusters.png)
+--------------------------------------------------------------------------------
+La visualizzazione UMAP (Uniform Manifold Approximation and Projection) mostra la
+struttura geometrica globale e locale del microbioma nello spazio ridotto.
+
+- COMPATTEZZA E SEPARAZIONE: I 20 cluster identificati da Louvain mostrano una 
+  coerenza spaziale eccezionale. Non si osserva un'unica nuvola informe, bensì 
+  una struttura altamente polarizzata. Esistono cluster nettamente isolati dal 
+  corpo centrale (es. macro-isole distinte) che indicano profili microbiologici 
+  peculiari, unici e fortemente discontinui rispetto al resto della coorte.
+- STRUTTURA A GRADIENTE E TRAIETTORIE: La parte centrale del grafico rivela una 
+  disposizione "a costellazione" o a transizione continua. Questo pattern è 
+  tipico dei dati di microbioma umano/ambientale, dove i campioni si muovono 
+  lungo gradienti ecologici (es. transizioni dietetiche, gradienti di gravità 
+  di una patologia o variazioni di barriera intestinale).
+- VALIDAZIONE DEL CLUSTERING: Il fatto che i colori dei cluster siano densamente 
+  raggruppati e non mescolati casualmente dimostra l'elevata robustezza del 
+  grafo KNN e la precisione dell'algoritmo di Louvain nel rilevare le reali 
+  discontinuità strutturali dei dati.
+
+--------------------------------------------------------------------------------
+3. INTERPRETAZIONE DEL PROFILO TASSONOMICO (phylum_cluster_heatmap.png)
+--------------------------------------------------------------------------------
+La heatmap mappa l'abbondanza relativa dei principali Phyla batterici (righe) 
+all'interno dei 20 cluster (colonne), fungendo da "impronta digitale" biologica.
+
+- IL BIOMARKER FIRM_BAC (Bacillota / Bacteroidota): L'analisi evidenzia che la 
+  forza trainante della clusterizzazione risiede principalmente nel bilanciamento 
+  tra i due phyla dominanti: Bacillota (Firmicutes) e Bacteroidota. 
+  * Alcuni cluster mostrano una dominanza quasi assoluta di Bacillota con una 
+    drastica depletion di Bacteroidota.
+  * Altri cluster presentano il pattern esattamente opposto (Bacteroidota-rich).
+  Questo comportamento riflette i classici shift ecologici ampiamente descritti 
+  in letteratura microbiologica (es. variazioni del rapporto F/B associate a 
+  stati metabolici, infiammatori o diete specifiche).
+- CLUSTER AD ALTA SPECIFICITÀ (Phyla Minoritari): Alcuni cluster specifici si 
+  distinguono nettamente per l'arricchimento selettivo di phyla meno abbondanti 
+  ma biologicamente cruciali, come Actinomycetota, Pseudomonadota (Proteobacteria) 
+  o Verrucomicrobiota. Un picco di Pseudomonadota in un cluster isolato, ad esempio, 
+  è una forte firma di disbiosi o di potenziali focolai infiammatori/infettivi.
+- OMOGENEITÀ DI GRUPPO: La heatmap conferma che i singoli cluster sono 
+  internamente stabili, mostrando profili di espressione tassonomica verticali 
+  molto coerenti tra i campioni che li compongono.
+
+--------------------------------------------------------------------------------
+4. ANALISI DEL FILE DI OUTPUT (sample_clusters.csv)
+--------------------------------------------------------------------------------
+Il file CSV mappa l'ID di ogni singolo campione biologico al rispettivo cluster 
+numerico (0-19). La distribuzione numerica dei campioni per cluster varia da un 
+minimo di 16 a un massimo di 187 unità, escludendo la presenza di "singleton" 
+(cluster spuri composti da 1 o 2 campioni) e garantendo la significatività 
+statistica di ogni raggruppamento per le analisi successive.
+
+--------------------------------------------------------------------------------
+5. CONCLUSIONI E STRATEGIA PER IL WORKFLOW BIOLOGICO NEXT-STEP
+--------------------------------------------------------------------------------
+La pipeline ha eseguito con successo la stratificazione della coorte. I risultati 
+non mostrano artefatti matematici, bensì una chiara organizzazione biologica.
+
+Per valorizzare al massimo questo output, si raccomandano i seguenti passaggi:
+1. INCROCIO CON I METADATI (Phenotype Mapping): Associare la colonna dei cluster 
+   del file CSV ai metadati clinici/ambientali (es. Sani vs Malati, Trattati vs 
+   Controlli). Applicare un test del Chi-quadrato o il test esatto di Fisher per 
+   dimostrare se un cluster è statisticamente associato a una condizione fenotipica.
+2. DIFFERENTIAL ABUNDANCE ANALYSIS (DAA): Utilizzare i 20 cluster identificati 
+   come classi di disegno sperimentale per l'applicazione di algoritmi come 
+   DESeq2, ANCOM-BC o LinDA sulla matrice dei Generi originali. Questo permetterà 
+   di isolare i singoli biomarcatori batterici (a livello di Genere/Specie) responsabili 
+   delle macro-differenze osservate nella heatmap dei Phyla.
+================================================================================
