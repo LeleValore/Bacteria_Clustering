@@ -1,5 +1,5 @@
 ================================================================================
-RELAZIONE TECNICO-BIOLOGICA: ANALISI DEI RISULTATI DELLA PIPELINE FIBROGRAPH
+RELAZIONE TECNICO-BIOLOGICA: ANALISI DEI RISULTATI DELLA PIPELINE 
 ================================================================================
 
 1. METODOLOGIA COMPUTAZIONALE E STRUTTURA DATI

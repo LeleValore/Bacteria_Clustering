@@ -9,7 +9,6 @@ Pipeline computazionale per l'analisi di abbondanza microbica tramite riduzione 
 ```
 fibro_graph/
 ├── run_pipeline.py          # ← ENTRY POINT principale (eseguire questo)
-├── pipeline.py              # Moduli riutilizzabili (funzioni)
 ├── requirements.txt
 ├── README.md
 ├── data/
